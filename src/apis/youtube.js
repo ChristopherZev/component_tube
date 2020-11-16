@@ -7,6 +7,6 @@ export default axios.create({
         part: 'snippet',
         type: 'video',
         maxResults: 5,
-        key: `${proccess.env.APIKEY}`
+        key: `${process.env.APIKEY}`
     }
 });
