@@ -1,8 +1,6 @@
 import axios from 'axios';
-// Omit this file making a change
-// const APIKEY = 'AIzaSyA41OopxiMLIkA_ZbbnYQHCYXmZ_Oj2pI4';
 
-const APIKEY= process.env.APIKEY
+const APIKEY = process.env.REACT_APP_API_KEY
 
 export default axios.create({
     baseURL: 'https://www.googleapis.com/youtube/v3',
@@ -10,6 +8,6 @@ export default axios.create({
         part: 'snippet',
         type: 'video',
         maxResults: 5,
-        key: `${process.env.APIKEY}`
+        key: `${APIKEY}`
     }
 });
