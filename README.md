@@ -29,6 +29,27 @@ Also make sure you restrict your HTTP response as seen below, allowing only the 
 
 <br>
 
+In the youtube.js file insert the following with your own to define your API Key Variable via `REACT_APP_API_KEY`.
+
+```javascript
+import axios from 'axios';
+
+const APIKEY = process.env.REACT_APP_API_KEY
+
+export default axios.create({
+    baseURL: 'https://www.googleapis.com/youtube/v3',
+    params: {
+        part: 'snippet',
+        type: 'video',
+        maxResults: 5,
+        key: `${APIKEY}`
+    }
+});
+```
+
+* Create the `.env` file `touch .env`
+* Navigate to `.env` file
+* Define the API Key Variable here like this: `REACT_APP_API_KEY=#####################################`
 
 When the youtube.js file is complete `cd component-tube` and enter `npm start` and you are done!
 
